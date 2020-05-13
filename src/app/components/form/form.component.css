@@ -80,6 +80,7 @@ select {
   font-weight: bold;
   color: #525252;
   outline: none;
+  margin-bottom: 15px;
 }
 
 select:active, select:focus {

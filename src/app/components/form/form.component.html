@@ -3,8 +3,8 @@
 
       <label for="email">Email:
         <span class="info-block" *ngIf="form.get('email').invalid && form.get('email').touched">
-        <small class="text" *ngIf="form.get('email').errors.required">Email must be not empty!</small>
-        <small class="text" *ngIf="form.get('email').errors.email">Incorrect email!</small>
+          <small class="text" *ngIf="form.get('email').errors.required">Email must be not empty!</small>
+          <small class="text" *ngIf="form.get('email').errors.email">Incorrect email!</small>
         </span>
       </label>
       <input
@@ -43,12 +43,27 @@
         formControlName="password"
       >
 
-      <label for="city">City:</label>
-      <select name="city" id="city">
-        <option value="kiev">Kiev</option>
-        <option value="vinnitsa">Vinnitsa</option>
-        <option value="kharkov">Kharkov</option>
-      </select>
+      <div class="address d-flex flex-column" formGroupName="address">
+        <label for="city">City:</label>
+        <select name="city" id="city" formControlName="city">
+          <option value="kiev">Kiev</option>
+          <option value="vinnitsa">Vinnitsa</option>
+          <option value="kharkov">Kharkov</option>
+        </select>
+
+        <label for="password">Address:
+          <span class="info-block" *ngIf="form.get('address.street').invalid && form.get('address.street').touched">
+            <small class="text" *ngIf="form.get('address.street').errors.required">Input must be not empty!</small>
+          </span>
+        </label>
+        <input
+          type="text"
+          class="input"
+          id="address"
+          placeholder="Your address..."
+          formControlName="street"
+        >
+      </div>
 
       <button class="button" type="submit" [disabled]="form.invalid">Send</button>
 

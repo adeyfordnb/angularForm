@@ -24,7 +24,11 @@ export class FormComponent implements OnInit {
       name: new FormControl(null, [
         Validators.required,
         Validators.minLength(2)
-      ])
+      ]),
+      address: new FormGroup({
+        city: new FormControl('kiev'),
+        street: new FormControl(null, Validators.required)
+      })
     });
   }
 
