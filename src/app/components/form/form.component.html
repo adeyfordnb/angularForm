@@ -1,0 +1,55 @@
+<div class="block d-flex justify-content-center align-items-center">
+    <form class="group" [formGroup]="form" (ngSubmit)="submit()">
+
+      <label for="email">Email:
+        <span class="info-block" *ngIf="form.get('email').invalid && form.get('email').touched">
+        <small class="text" *ngIf="form.get('email').errors.required">Email must be not empty!</small>
+        <small class="text" *ngIf="form.get('email').errors.email">Incorrect email!</small>
+        </span>
+      </label>
+      <input
+        type="text"
+        class="input"
+        id="email"
+        placeholder="Enter email..."
+        formControlName="email"
+      >
+
+      <label for="name">Name:
+        <span class="info-block" *ngIf="form.get('name').invalid && form.get('name').touched">
+          <small class="text" *ngIf="form.get('name').errors.required">Name must be not empty!</small>
+        </span>
+      </label>
+      <input
+        type="text"
+        class="input"
+        id="name"
+        placeholder="Your name..."
+        formControlName="name"
+      >
+
+      <label for="password">Password:
+        <span class="info-block" *ngIf="form.get('password').invalid && form.get('password').touched">
+          <small class="text" *ngIf="form.get('password').errors.required">Password must be not empty!</small>
+          <small class="text" *ngIf="form.get('password').errors.minlength">Length must be longer!</small>
+        </span>
+      </label>
+      <input
+        type="password"
+        class="input"
+        id="password"
+        placeholder="Password..."
+        formControlName="password"
+      >
+
+      <label for="city">City:</label>
+      <select name="city" id="city">
+        <option value="kiev">Kiev</option>
+        <option value="vinnitsa">Vinnitsa</option>
+        <option value="kharkov">Kharkov</option>
+      </select>
+
+      <button class="button" type="submit" [disabled]="form.invalid">Send</button>
+
+    </form>
+</div>

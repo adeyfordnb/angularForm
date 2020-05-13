@@ -1,0 +1,104 @@
+.block {
+  background-color: #211d1f;
+  height: 550px;
+  width: 365px;
+  color: #919191;
+  font-weight: bold;
+  border-radius: 5%;
+  box-shadow: 23px 23px 30px -23px rgba(0,0,0,1)
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  width: 280px;
+  outline: none;
+  border-radius: 8px;
+  border: none;
+  background-color: #000000;
+  font-weight: bold;
+  color: #919191;
+  padding-left: 10px;
+  height: 40px;
+  margin-bottom: 15px;
+}
+
+.button {
+  width: 80px;
+  height: 40px;
+  background-color: black;
+  color: #919191;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  margin: 10px auto;
+  border-radius: 6px;
+}
+
+.info-block {
+  height: 24px;
+  position: absolute;
+  background-color: black;
+  right: 0;
+  border-radius: 5px;
+  font-size: 12px;
+  line-height: 21px;
+  padding: 0 7px;
+  color: brown;
+}
+
+.info-block::before {
+  width: 0;
+  height: 0;
+  content: ' ';
+  border: 10px solid transparent;
+  border-top-color: black;
+  bottom: -18px;
+  position: absolute;
+  left: 5px;
+}
+
+input::placeholder {
+  color: #525252;
+  font-weight: lighter;
+}
+
+label {
+  padding-left: 10px;
+  position: relative;
+}
+
+select {
+  background-color: black;
+  border-radius: 10px;
+  height: 40px;
+  border: none;
+  padding-left: 10px;
+  font-weight: bold;
+  color: #525252;
+  outline: none;
+}
+
+select:active, select:focus {
+  border: none;
+  outline: none;
+}
+
+option:focus {
+  border: none;
+}
+
+button:disabled {
+  background-color: #4d4d4c;
+}
+
+input.ng-invalid.ng-touched {
+  border-bottom: 1px solid brown;
+}
+
+input.ng-valid.ng-touched {
+  border-bottom: 1px solid green;
+}
