@@ -22,7 +22,8 @@ export class FormComponent implements OnInit {
         Validators.minLength(4)
       ]),
       name: new FormControl(null, [
-        Validators.required
+        Validators.required,
+        Validators.minLength(2)
       ])
     });
   }

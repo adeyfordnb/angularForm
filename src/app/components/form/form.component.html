@@ -18,6 +18,7 @@
       <label for="name">Name:
         <span class="info-block" *ngIf="form.get('name').invalid && form.get('name').touched">
           <small class="text" *ngIf="form.get('name').errors.required">Name must be not empty!</small>
+          <small class="text" *ngIf="form.get('name').errors.minlength">Length must be longer!</small>
         </span>
       </label>
       <input
